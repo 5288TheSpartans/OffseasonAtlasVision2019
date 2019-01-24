@@ -42,12 +42,15 @@ public class Robot extends TimedRobot {
 	@Override
 	public void robotInit() {
 		NetworkTableInstance inst = NetworkTableInstance.getDefault();
-		NetworkTable table = inst.getTable("datatable");
+		
+		NetworkTable table = inst.getTable("visionData1");
 		m_oi = new OI();
 		m_chooser.addDefault("Default Auto", new ExampleCommand());
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", m_chooser);
 		distEntry = table.getEntry("distance");
+		distEntry.getNumber(-1);
+		// 
 	}
 
 	/**
